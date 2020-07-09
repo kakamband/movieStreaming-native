@@ -186,7 +186,7 @@ const Home = () => {
         </View>
       </View>
 
-      <View style={{ marginHorizontal: 14 }}>
+      <View style={{ marginHorizontal: 14, marginTop: 70 }}>
         <Text
           style={{
             fontSize: 25,
@@ -224,6 +224,60 @@ const Home = () => {
             />
           </TouchableOpacity>
         </ImageBackground>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 24,
+            marginTop: 36,
+          }}
+        >
+          <Text style={{ color: "#fff", fontSize: 24, fontWeight: "bold" }}>
+            My List
+          </Text>
+          <Text style={{ color: "#fff", fontSize: 14, fontWeight: "normal" }}>
+            View All
+          </Text>
+        </View>
+
+        <FlatList
+          style={{ marginBottom: 30 }}
+          data={list}
+          horizontal={true}
+          keyExtractor={(item) => item.title}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity style={{ marginRight: 20 }}>
+                <Image
+                  source={{ uri: item.img }}
+                  style={{ height: 300, width: 200 }}
+                />
+                <View
+                  style={{
+                    position: "absolute",
+                    height: 5,
+                    width: "100%",
+                    backgroundColor: "#02ad94",
+                    opacity: 0.8,
+                  }}
+                ></View>
+                <FontAwesome5
+                  name="play"
+                  size={38}
+                  color="#fff"
+                  style={{
+                    position: "absolute",
+                    top: "45%",
+                    left: "45%",
+                    opacity: 0.9,
+                  }}
+                />
+              </TouchableOpacity>
+            );
+          }}
+        />
       </View>
     </ScrollView>
   );
@@ -284,7 +338,7 @@ const styles = StyleSheet.create({
     width: null,
     opacity: 1,
     justifyContent: "flex-start",
-    paddingTop: Platform.OS === "ios" ? 30 : 10,
+    paddingTop: Platform.OS === "ios" ? 30 : 30,
   },
   SearchBoxContainer: {
     backgroundColor: "#fff",
