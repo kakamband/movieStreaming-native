@@ -208,6 +208,21 @@ const Home = () => {
           <Text style={{ color: "#FFF", padding: 14 }}>
             How to train your Dragon: the Hidden World
           </Text>
+          <TouchableOpacity
+            style={{
+              ...styles.playIconContainer,
+              position: "absolute",
+              top: "40%",
+              right: "40%",
+            }}
+          >
+            <FontAwesome5
+              name="play"
+              size={30}
+              color="#02ad94"
+              style={{ marginLeft: 4 }}
+            />
+          </TouchableOpacity>
         </ImageBackground>
       </View>
     </ScrollView>
